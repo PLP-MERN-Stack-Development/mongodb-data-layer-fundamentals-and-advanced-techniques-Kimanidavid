@@ -31,11 +31,8 @@
 
 ```
 ├── insert_books.js          # Initial data insertion script
-├── mongodb_queries.js       # Basic CRUD operations
-├── advanced_queries.js      # Advanced query operations
-├── aggregation_queries.js   # Aggregation pipeline queries
-├── indexing.js             # Database indexing operations
-└── .env                    # Environment variables
+├── queries.js               # Basic CRUD operations
+└── .env                     # Environment variables
 ```
 
 ## Running the Project
