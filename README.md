@@ -1,59 +1,129 @@
-# MongoDB Fundamentals - Week 1
+# MongoDB Bookstore Project
 
-## Setup Instructions
-
-Before you begin this assignment, please make sure you have the following installed:
-
-1. **MongoDB Community Edition** - [Installation Guide](https://www.mongodb.com/docs/manual/administration/install-community/)
-2. **MongoDB Shell (mongosh)** - This is included with MongoDB Community Edition
-3. **Node.js** - [Download here](https://nodejs.org/)
-
-### Node.js Package Setup
-
-Once you have Node.js installed, run the following commands in your assignment directory:
-
-```bash
-# Initialize a package.json file
-npm init -y
-
-# Install the MongoDB Node.js driver
-npm install mongodb
-```
-
-## Assignment Overview
-
-This week focuses on MongoDB fundamentals including:
-- Creating and connecting to MongoDB databases
-- CRUD operations (Create, Read, Update, Delete)
-- MongoDB queries and filters
-- Aggregation pipelines
-- Indexing for performance
-
-## Submission
-
-Complete all the exercises in this assignment and push your code to GitHub using the provided GitHub Classroom link.
-
-## Getting Started
-
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Install MongoDB locally or set up a MongoDB Atlas account
-4. Run the provided `insert_books.js` script to populate your database
-5. Complete the tasks in the assignment document
-
-## Files Included
-
-- `Week1-Assignment.md`: Detailed assignment instructions
-- `insert_books.js`: Script to populate your MongoDB database with sample book data
-
-## Requirements
+## Prerequisites
 
 - Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- MongoDB Shell (mongosh) or MongoDB Compass
+- MongoDB Community Edition
+- MongoDB Shell (mongosh)
+- Git
+
+## Installation
+
+1. **Clone the Repository**
+   ```bash
+   git clone <repository-url>
+   cd mongodb-data-layer-fundamentals
+   ```
+
+2. **Install Dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Configure MongoDB**
+   - Create a `.env` file in the root directory
+   - Add your MongoDB connection string:
+   ```
+   MONGODB_URI=mongodb://localhost:27017/plp_bookstore
+   ```
+
+## Project Structure
+
+```
+├── insert_books.js          # Initial data insertion script
+├── mongodb_queries.js       # Basic CRUD operations
+├── advanced_queries.js      # Advanced query operations
+├── aggregation_queries.js   # Aggregation pipeline queries
+├── indexing.js             # Database indexing operations
+└── .env                    # Environment variables
+```
+
+## Running the Project
+
+1. **Start MongoDB Service**
+   ```bash
+   # Windows (Run as Administrator)
+   net start MongoDB
+   ```
+
+2. **Initialize Database**
+   ```bash
+   node insert_books.js
+   ```
+
+3. **Run Different Query Operations**
+
+   - Basic CRUD Operations:
+   ```bash
+   node mongodb_queries.js
+   ```
+
+   - Advanced Queries:
+   ```bash
+   node advanced_queries.js
+   ```
+
+   - Aggregation Pipelines:
+   ```bash
+   node aggregation_queries.js
+   ```
+
+   - Create Indexes:
+   ```bash
+   node indexing.js
+   ```
+
+## Available Operations
+
+### Basic Queries
+- Find books by genre
+- Find books by publication year
+- Find books by author
+- Update book prices
+- Delete books
+
+### Advanced Queries
+- Find in-stock books published after 2010
+- Query with field projections
+- Sort books by price
+- Implement pagination
+
+### Aggregation Operations
+- Calculate average price by genre
+- Find most published authors
+- Group books by decade
+
+### Indexing
+- Single field index on title
+- Compound index on author and published year
+- Performance analysis with explain()
+
+## Troubleshooting
+
+1. **MongoDB Connection Issues**
+   - Verify MongoDB is running: `mongosh`
+   - Check connection string in `.env`
+   - Ensure correct MongoDB port (default: 27017)
+
+2. **Data Import Issues**
+   - Run `insert_books.js` first
+   - Check database name matches connection string
+   - Verify MongoDB user permissions
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
 
 ## Resources
 
 - [MongoDB Documentation](https://docs.mongodb.com/)
+- [Node.js MongoDB Driver](https://mongodb.github.io/node-mongodb-native/)
 - [MongoDB University](https://university.mongodb.com/)
-- [MongoDB Node.js Driver](https://mongodb.github.io/node-mongodb-native/) 
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details
